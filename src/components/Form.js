@@ -1,14 +1,18 @@
-function Form(){
+import { useState } from "react";
+
+export default function Form({addItem}){
   const [description,setDescription]=useState('')
   const [opt,setopt]=useState(1)
+  const [count,setCount]=useState(1)
   function handleSubmit(e){
     e.preventDefault();
-    const newItem={description,quantity:opt,package:false,id:initialItems.length+1}
+    
+    const newItem={description,quantity:opt,package:true,id:count}
     console.log(newItem)
-    initialItems.push(newItem);
-    console.log(initialItems)
+    addItem(newItem)
     setDescription('')
     setopt('1')
+    setCount(co=>co+1);
     }
   return(
     <form className="add-form" onSubmit={handleSubmit}>
