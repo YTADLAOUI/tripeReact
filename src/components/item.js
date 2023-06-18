@@ -1,11 +1,11 @@
-export default function Item({item}){
+export default function Item({item,onToggleItem}){
   console.log(item.package)
   return (
     <il>
       <input
         type="checkbox"
         value={item.package}
-        // onChange={() => onToggleItem(item.id)}
+        onChange={() => onToggleItem(item.id) }
       />
         <span style={item.package?{textDecoration:"line-through"}:{}}>{item.quantity} {item.description}
         </span>

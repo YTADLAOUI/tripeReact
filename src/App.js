@@ -14,12 +14,18 @@ export default function App(){
 function hundleAddItem(item){
 setItems([...items,item])
 }
-console.log(items,'heloo')
+function onToggleItem(id){
+  items.map((item)=>(
+    item.id==id ? {...item,package:!item.package}:item
+    
+  ))
+}
+
 return(
 <div className="app"> 
   <Logo/>
   <Form addItem={hundleAddItem} />
-  <PackingList initialItems={items} />
+  <PackingList initialItems={items} onToggleItem={onToggleItem}/>
   <Stats />
 </div>
 )

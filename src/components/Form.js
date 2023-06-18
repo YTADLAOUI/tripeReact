@@ -7,8 +7,8 @@ export default function Form({addItem}){
   function handleSubmit(e){
     e.preventDefault();
     
-    const newItem={description,quantity:opt,package:true,id:count}
-    console.log(newItem)
+    const newItem={description,quantity:opt,package:false,id:count}
+    // console.log(newItem)
     addItem(newItem)
     setDescription('')
     setopt('1')
