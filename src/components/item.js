@@ -1,4 +1,4 @@
-export default function Item({item,onToggleItem}){
+export default function Item({item,onToggleItem,onDeleteItem}){
   // console.log(item.id,'hi')
   return (
     <il>
@@ -11,6 +11,6 @@ export default function Item({item,onToggleItem}){
 
         <span style={item.package?{textDecoration:"line-through"}:{}}>{item.quantity} {item.description}
         </span>
-        <button style={{ border:'none',backgroundColor:'transparent',fontSize:'2rem',padding:'2px'}}>❌</button>
+        <button style={{ border:'none',backgroundColor:'transparent',fontSize:'2rem',padding:'2px'}} onClick={()=>onDeleteItem(item.id)}>❌</button>
     </il>)
   }

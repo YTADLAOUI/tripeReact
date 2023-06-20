@@ -18,15 +18,16 @@ function onToggleItem(id){
 setItems((items)=>(items.map((item) => {
   return item.id === id ? { ...item, package: !item.package } : item;
 })))
-  
-  console.log(items)
+}
+function onDeleteItem(id){
+   setItems(items.filter((item)=>(item.id !== id)))
 }
 
 return(
 <div className="app"> 
   <Logo/>
   <Form addItem={hundleAddItem} />
-  <PackingList initialItems={items} onToggleItem={onToggleItem}/>
+  <PackingList initialItems={items} onToggleItem={onToggleItem} onDeleteItem={onDeleteItem} />
   <Stats />
 </div>
 )
