@@ -15,10 +15,11 @@ function hundleAddItem(item){
 setItems([...items,item])
 }
 function onToggleItem(id){
-  items.map((item)=>(
-    item.id==id ? {...item,package:!item.package}:item
-    
-  ))
+setItems((items)=>(items.map((item) => {
+  return item.id === id ? { ...item, package: !item.package } : item;
+})))
+  
+  console.log(items)
 }
 
 return(
