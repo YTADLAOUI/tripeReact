@@ -1,5 +1,5 @@
 import Item from "./item"
-export default function PackingList({initialItems,onToggleItem,onDeleteItem}){
+export default function PackingList({initialItems,onToggleItem,onDeleteItem,onClearList}){
  
   return (
   <div className="list">
@@ -7,6 +7,7 @@ export default function PackingList({initialItems,onToggleItem,onDeleteItem}){
         <Item item={item} key={item.id} onToggleItem={onToggleItem} onDeleteItem={onDeleteItem}/>
       ))}
     </ul>
+    <button onClick={onClearList}>Clear list</button>
   </div>
   )
 }
