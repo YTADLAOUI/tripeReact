@@ -6,6 +6,10 @@ let sortedItems;
 
  if(sortBy=='input') sortedItems=initialItems;
  if(sortBy=="description") sortedItems=initialItems.slice().sort((a, b) => a.description.localeCompare(b.description));
+ if (sortBy === "packed")
+    sortedItems = initialItems
+      .slice()
+      .sort((a, b) => Number(a.packed) - Number(b.packed));
   return (
   <div className="list">
       <ul >{sortedItems.map((item)=>(
